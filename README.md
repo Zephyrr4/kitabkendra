@@ -82,7 +82,7 @@ To run this project locally, follow these steps:
 
 ## Screenshots
 
-Include screenshots of your application here to showcase its UI and functionality. For example:
+Here are some screenshots of the KetabKendra application to give you a visual overview of its interface:
 
 ![Login Screen](screenshots/Login_screen.png)
 ![User Dashboard](screenshots/User_Dashboard.png)
