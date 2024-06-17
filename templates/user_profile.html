@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="/static/sign_reg.css"> -->
+    <link rel="stylesheet" href="/static/user_profile.css">
+    <link rel="stylesheet" href="/static/profile.css">
+    <title>Profile-Kitabkendra</title>
+</head>
+<body>
+   <nav>
+    <div>
+      <ul class="nav-bar">
+        <li class="logo"><a href="/dashboard"><b>Kitab</b>kendra</a></li>
+        <li class='nav-search'><form><input type="search" placeholder="Search"><button>Search</button></form></li>
+        <ul class='nav-list'>
+          <li>Hello,{{user_details.user_name}}</li>
+          <li><a href="dashboard">Home</a></li>
+          <li><a href="/mybooks">My Books</a></li>
+          <li class="active-nav"><a href="#">Profile</a></li>
+          <li><a href="logout">Logout</a></li>
+        </ul>
+      </ul>
+    </div>
+   </nav>
+
+   <!-- main -->
+   <main class="form-container">
+    <h4>PROFILE</h4>
+    <form action="/profile", method="post">
+      <div class="form-field"><label>User Name</label>
+      <input type="text" value="{{user_details.user_name}}" name="user_name"></div>
+      <div class="form-field"><label>First Name</label>
+        <input type="text" value="{{user_details.first_name}}" name="f_name"></div>
+        <div class="form-field"><label>Last Name</label>
+          <input type="text" value="{{user_details.last_name}}" name='l_name'></div>
+        <div class="form-field"><label>Email</label>
+        <input type="text" value="{{user_details.email}}" name="email"></div>
+        <div class="form-field"><label>Password</label>
+        <input type="password" placeholder="password" required name="password"></div>
+        <button class="btn-field">Update</button>
+    </form>
+</main>
+  
+</body>
+</html>

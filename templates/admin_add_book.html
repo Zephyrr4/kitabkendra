@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <title>ADD BOOK - Kitabkendra</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-5 ps-5" href="/admin_dashboard"><b>Kitab</b>kendra<sub style="font-weight: 300;"> admin</sub></a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container text-center">
+      <h3 class="m-3">Add Book</h3>
+      
+      <form action='/admin/add_book' method="post" enctype=multipart/form-data>
+            <div class="row m-3 pt-3">
+                <div class="col"> 
+                <label for="book_name">Book Name</label>
+                </div>
+                <div class="col">
+                    <input class='col' type="text" name="book_name" id="book_name">
+                </div>
+            </div>
+            <div class="row m-3 ">
+                <div class="col"> 
+                <label for="Book_description">Book Description</label>
+                </div>
+                <div class="col">
+                    <input class='col' type="text" name="book_description" id="Book_description">
+                </div>
+            </div>
+            <div class="row m-3 pt-3">
+              <div class="col"> 
+              <label for="author_name">Author Name</label>
+              </div>
+              <div class="col">
+                  <input class='col' type="text" name="author_name" id="author_name">
+              </div>
+          </div>
+
+          <div class="row m-3 pt-3">
+            <div class="col"> 
+            <label for="price">Price</label>
+            </div>
+            <div class="col">
+                <input class='col' type="number" name="price" id="price">
+            </div>
+        </div>
+
+        <div class="row m-3 pt-3">
+          <div class="col"> 
+          <label for="book_cover">Book cover</label>
+          </div>
+          <div class="col">
+              <input class='col' type="file" name="book_cover" id="book_cover">
+          </div>
+      </div>
+      <div class="row m-3 pt-3">
+        <div class="col"> 
+        <label for="book_pdf">Book pdf</label>
+        </div>
+        <div class="col">
+            <input class='col' type="file" name="book_pdf">
+        </div>
+    </div>
+        {% if all_section%}
+        <div class="row m-3 pt-3">
+          <div class="col"> 
+          <label for="section_names">Select Section</label>
+          </div>
+          <div class="col">
+            <select name="section" id="section_name">
+            {% for section in all_section%}
+            <option value="{{section.section_id}}">{{section.section_name}}</option>
+            {%endfor%}
+          </select>
+          </div>
+        </div>
+
+        {%else%}
+        <div>
+        <div class="alert alert-danger">First Add Section</div>
+        <!-- <div class="col-2"><a href="/admin/add_section"><button class="btn btn-secondary">ADD SECTION</button></a></div> -->
+        </div>
+        {% endif %}
+            <button type="submit" class="btn btn-primary">ADD</button>
+          </form>
+          
+          {%with messages=get_flashed_messages()%}
+        {%if messages%}
+        {%for message in messages%}
+        <div class="alert alert-success"><h6>{{message}}</h6></div>
+        {%endfor%}
+        {%endif%}
+        {%endwith%}
+        <a href="/admin/books" class="btn btn-secondary m-2">Back</a>
+
+          </section>
+
+    </div>
+</body>
+</html>

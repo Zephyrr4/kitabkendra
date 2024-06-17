@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/user_dash.css">
+    <title>Dashboard-Kitabkendra</title>
+</head>
+<body>
+    <div>
+      <ul class="nav-bar">
+        <li class="logo"><a href="/dashboard"><b>Kitab</b>kendra</a></li>
+        <li class='nav-search'><form action="/search"><input type="search" placeholder="Search" name="search"><button>Search</button></form></li>
+        <ul class='nav-list'>
+          <li>Hello,{{user_details.user_name}}</li>
+          <li><a href="/dashboard">Home</a></li>
+          <li  class="active-nav"><a href="#">My Books</a></li>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="logout">Logout</a></li>
+        </ul>
+      </ul>
+    </div>
+      <!-- MAIN -->
+      <main> 
+       <div class="container mt-4">
+
+        {% if user_issued_book%}
+        <div class="text-center section_title" ><h2>Issued</h2></div>
+
+
+        <section class="d-flex flex-nowrap overflow-x-auto mb-5"> 
+        {% for usr_book in user_issued_book%}
+          
+        <div class="card m-3 flex-shrink-0 d-flex flex-column justify-content-between" style="width: 14rem;">
+            <img class="card-img p-3" src="/static/book_cover/book_{{usr_book.book.book_id}}.jpeg" onerror="this.src='/static/Kitabkendra_cover.jpg'" style="max-height: 280px;" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{usr_book.book.book_name}}</h5>
+              <p style="color: grey;"><em>{{usr_book.book.book_author}}</em></p>
+              <p class="card-text">{{usr_book.book_description}}</p>
+              <p class="card-text">Issued Date - {{usr_book.issued_date[:10]}}</p>
+              <p class="card-text">Return Date - {{usr_book.revoke_date[:10]}}</p>
+              <span class="d-flex justify-content-between">
+                <a class="btn btn-success" href="/read/book/{{usr_book.book.book_id}}">Read</a>
+                <a class="btn btn-secondary" href="/return/book/{{usr_book.book.book_id}}">Return</a>
+              </span>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+          </div>
+          {%endfor%}
+        </section>
+        
+        {%endif%}
+      <!-- ############### -->
+        {% if user_request_book%}
+        <div class="text-center section_title"><h2>Requested</h2></div>
+
+
+        <section class="d-flex flex-nowrap overflow-x-auto mb-5"> 
+        {% for usr_book in user_request_book%}
+          
+        <div class="card m-3 flex-shrink-0 d-flex flex-column justify-content-between" style="width: 14rem;">
+            <img src="/static/book_cover/book_{{usr_book.book.book_id}}.jpeg" onerror="this.src='/static/Kitabkendra_cover.jpg'" style="max-height: 280px;" class="card-img p-3" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{usr_book.book.book_name}}</h5>
+              <p style="color: grey;"><em>{{usr_book.book.book_author}}</em></p>
+              <p class="card-text">{{usr_book.book_description}}</p>
+              <a class="btn btn-primary disabled">Requested</a>
+            </div>
+          </div>
+          {%endfor%}
+        </section>
+        
+        {%endif%}
+
+        <!-- ############ -->
+        {% if user_returned_book%}
+        <div class="text-center section_title"><h2>Completed</h2></div>
+
+
+        <section class="d-flex flex-nowrap overflow-x-auto mb-5"> 
+        {% for usr_book in user_returned_book%}
+          
+        <div class="card m-3 flex-shrink-0 d-flex flex-column justify-content-between" style="width: 14rem;">
+          <div class="badge">Completed</div>
+            <img src="/static/book_cover/book_{{usr_book.book.book_id}}.jpeg" onerror="this.src='/static/Kitabkendra_cover.jpg'" style="max-height: 280px;" class="card-img p-3" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{usr_book.book.book_name}}</h5>
+              <p style="color: grey;"><em>{{usr_book.book.book_author}}</em></p>
+              <p class="card-text">Issued Date - {{usr_book.issued_date[:10]}}</p>
+              <p class="card-text">Returned Date - {{usr_book.revoke_date[:10]}}</p>
+              <a href="/{{user_details.user_id}}/add_book/{{usr_book.book.book_id}}" class="btn btn-primary">Request</a>
+            </div>
+          </div>
+          {%endfor%}
+        </section>
+        
+        {%endif%}        
+        </div>
+    </main>
+</body>
+</html>

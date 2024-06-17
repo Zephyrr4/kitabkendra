@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-5 ps-5" href="/"><b>Kitab</b>kendra<sub style="font-weight: 300;"> admin</sub></a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="logout">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav> 
+
+      <main class="m-5 p-4">
+        <div class="d-flex justify-content-around text-center">
+          <div class="wel_admin_1 p-3" >Section name<h3>{{section.section_name}}</h3></div>
+          <div class="wel_admin_1 p-3" >No of book Available<h3>{{section.book | length}}</h3></div>
+        </div>
+        
+        {% if section%}
+        <table class="table m-4 text-center" border="1px">
+          <tr>
+            <th>Book Name</th>
+            <th>Book description</th>
+            <th>Action</th>
+          </tr>
+          {% for book in section.book %}
+            <tr>
+                <td>{{book.book_name}}</td>
+                <td>{{book.book_description}}</td>
+                <td><a href="/admin/{{book.book_id}}/users">view</a></td>
+            </tr>
+            {%endfor%}
+        </table>
+        {%else%}
+        <h3 class="text-center p-5">No Books added</h3>
+        {%endif%}
+      <a href="/admin/sections" class="btn btn-secondary">Back</a>
+      </main>
+</body>
+</html>

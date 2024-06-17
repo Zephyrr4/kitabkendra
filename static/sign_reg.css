@@ -1,0 +1,116 @@
+:root{
+    --dark1:#39446B;
+    --place_holder:#78809B;
+    --input_back:#D9D9D9;
+    --back-ground:#F5F5F5;
+    --primary-highlight:#AB4BF7;
+}
+body{
+    font-family: "Urbanist", sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--back-ground);
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50px;
+}
+.form-container h3{
+    font-size: 20px;
+}
+.main-container{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width:600px;
+    background-color: white;
+    color: var(--dark1);
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.half-circle{
+    color: white;
+    height: 400px;
+    width: 200px;
+    background-color: #39446B;
+    border-radius: 0 50rem 50rem 0;
+}
+.half-circle-reg{
+    color: white;
+    height: 400px;
+    width: 200px;
+    background-color: #39446B;
+    border-radius: 50rem 0 0 50rem;
+}
+.half-circle-reg p{
+    font-size: 22px;
+    margin-top:8rem;
+    margin-left: 2rem;
+    position: absolute;
+}
+.half-circle p{
+    font-size: 22px;
+    margin-top:8rem;
+    margin-left: 2rem;
+    position: absolute;
+}
+.main-container .input-field{
+    padding:10px 20px;
+    margin: 20px 0;
+}
+.main-container .btn-field{
+    padding: 10px;
+}
+.main-container button{
+    width: 40%;
+    outline: none;
+    color: var(--back-ground);
+    padding: 10px 20px;
+    border: 2px solid;
+    border-radius: 15px;
+    background-color: var(--dark1);
+}
+.main-container button:hover{
+    cursor: pointer;
+    color: var(--dark1);
+    background-color:var(--back-ground) ;
+    border-color: var(--dark1);
+}
+.input-field input{
+    font-size: 15px;
+    padding: 10px 30px;
+    color:var(--dark1);
+    width: 70%;
+    outline-color:var(--dark1) ;
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: var(--input_back);
+}
+.input-field input::placeholder{
+    color: #78809B;
+}
+.input-field i{
+    /* border:3px solid ; */
+    color: var(--dark1);
+    margin: 10px;
+    position: absolute;
+}
+.main-container .form-footer{
+    margin-bottom: 30px;
+}
+.main-container a{
+    color: var(--dark1);
+}
+.main-container a:hover{
+    color: var(--primary-highlight);
+}
+.alert_danger{
+    background-color: rgba(255, 0, 0, 0.168);
+    color: rgb(248, 82, 82);
+}

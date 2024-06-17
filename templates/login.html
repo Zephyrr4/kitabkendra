@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/static/sign_reg.css">
+    <title>{{sign_register}}</title>
+</head>
+<body>
+    <main class="main-container">
+      <div class="half-circle">
+      <p><b>Kitab</b>kendra</p>
+      </div>
+      <div class="form-container">
+      <h3>Login</h3>
+      <form action="/login" method="post">
+        <div class="input-field">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" name="user_name" placeholder="username">
+        </div>
+        <div class="input-field">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" name="password" placeholder="password">
+        </div>
+        <div class="btn-field"><button>Submit</button></div>
+      </form>
+      
+      <div class="form-footer"><h4>New user?   <a href="/register">Register</a></h4>
+        {%with messages=get_flashed_messages()%}
+        {%if messages%}
+        {%for message in messages%}
+        <div class="alert_danger"><h4>{{message}}</h4></div>
+        {%endfor%}
+        {%endif%}
+        {%endwith%}
+      </div>
+    </div>
+    </main>
+    
+</body>
+<script src="https://kit.fontawesome.com/23da572ebb.js" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,48 @@
+:root{
+    --dark1:#39446B;
+    --dark2:#4d5a8c;
+    --place_holder:#78809B;
+    --input_back:#D9D9D9;
+    --back-ground:#F5F5F5;
+    --primary-highlight:#AB4BF7;
+    --primary-high-bg:#d29dfb97;
+}
+.body{
+    background-color: #F6FFF8;
+}
+main{
+    font-family: "Urbanist", sans-serif;
+    /* border: 1px black solid; */
+    /* delete this */
+    margin: 0vh 5vw;
+}
+.navbar{
+    background-color: #EAF4F4;
+}
+.wel_admin_1{
+    background-color: #6B9080;
+    color: #F6FFF8;
+}
+
+.wel_admin_2{
+    background-color: #6B9080;
+    border: 2px solid #3f564c;
+    color: #F6FFF8;
+}
+.wel_admin_2:hover{
+    background-color: #88b09e;
+}
+.btn-secondary{
+    background-color: #2D6A4F;
+}
+.btn-secondary:hover{
+    background-color: #155538;
+}
+.btn-outline-primary{
+    color: #1B4332;
+    border-color: #1B4332;
+    background-color: #D8F3DC;
+}
+.btn-outline-primary:hover{
+    background-color: #1B4332;
+}

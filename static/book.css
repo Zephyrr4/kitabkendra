@@ -1,0 +1,35 @@
+
+main{
+    border: 1px solid red;
+    display:grid;
+    grid-template-columns: 300px , 300px;
+    /* column-gap: 20px; */
+}
+.details{
+    padding-left: 4rem;
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+.book_info{
+    background-color: rgb(224, 224, 224);
+    margin-left: 1rem;
+    padding: 1rem;
+}
+.rating{
+    margin: 4rem auto;
+    background-color: red;
+}
+
+.details h6{
+    color: rgb(116, 116, 116);
+}
+iframe{
+    width: 100%;
+    height: 100vh;
+}
+/* form{
+    display: flex;
+    justify-content: center;
+} */

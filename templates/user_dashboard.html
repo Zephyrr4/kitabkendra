@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/user_dash.css">
+    <title>Dashboard-Kitabkendra</title>
+</head>
+<body>
+  <nav>
+  <ul class="nav-bar">
+    <li class="logo"><a href="#"><b>Kitab</b>kendra</a></li>
+    <li class='nav-search'><form action="/search"><input type="search" placeholder="Search" name="search"><button>Search</button></form></li>
+    <ul class='nav-list'>
+      <li>Hello,{{user_details.user_name}}</li>
+      <li class="active-nav"><a href="#">Home</a></li>
+      <li><a href="/mybooks">My Books</a></li>
+      <li><a href="profile">Profile</a></li>
+      <li><a href="logout">Logout</a></li>
+    </ul>
+  </ul>
+</nav>
+   
+   
+      <!-- MAIN -->
+      <main> 
+       <div class="container">
+        {%with messages=get_flashed_messages()%}
+        {%if messages%}
+        {%for message in messages%}
+        <div class="alert alert-danger text-center"><h6>{{message}}</h6></div>
+        {%endfor%}
+        {%endif%}
+        {%endwith%}
+        {% for section in  all_section%}
+        {% if section.book%}
+        <div class="ps-3 section_title" id="section_{{section.section_id}}"><h2>{{section.section_name}}</h2></div>
+        {%endif%}
+        <section class="d-flex gap-4 flex-nowrap overflow-x-auto mb-5">  
+        {% for book in section.book%}
+        <div class="card flex-shrink-0  d-flex flex-column justify-content-between" style="width: 14rem;">
+          <img class="card-img p-3" src="/static/book_cover/book_{{book.book_id}}.jpeg" onerror="this.src='/static/Kitabkendra_cover.jpg'" style="max-height: 280px;" alt="">
+          <div class="card_details p-1 ms-2">
+                  <h5 id ="book_{{book.book_id}}">{{book.book_name}}</h5>
+                  <p style="color: grey;"><em>{{book.book_author}}</em></p>
+                  <span class="d-flex justify-content-between">
+                  <h6>Rs. {{book.book_price}}</h6>
+                <p>{{book.book_rating}}⭐</p>
+                </span>
+                  <!-- requested -->
+              {% if user_request_book.filter_by(book_id=book.book_id).first() %}  
+              <a class="btn btn-primary disabled">Requested</a>
+              <!-- issued -->
+              {% elif user_issued_book.filter_by(book_id=book.book_id).first() %}
+              <span class="d-flex justify-content-between">
+                <a class="btn btn-success" href="/read/book/{{book.book_id}}">Read</a>
+                <a class="btn btn-secondary" href="/return/book/{{book.book_id}}">Return</a>
+              </span>
+              <!-- Already completed -->
+              {% elif user_returned_book.filter_by(book_id=book.book_id).first() %}
+              <a href="/{{user_details.user_id}}/add_book/{{book.book_id}}" class="btn btn-outline-primary">Request</a>
+              <div class="badge">Completed</div>
+              <!-- Normal -->
+              {% else %}
+              <a href="/{{user_details.user_id}}/add_book/{{book.book_id}}" class="btn btn-outline-primary">Request</a>
+              {% endif %}
+              </div>
+          <a href="/payment/book/{{book.book_id}}" class="btn-buy">BUY NOW</a>
+      </div>
+      {% endfor %}
+        </section>
+        
+        {% endfor %}
+
+     
+        </div>
+    </main>
+</body>
+</html>
