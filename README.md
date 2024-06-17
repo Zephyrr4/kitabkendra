@@ -70,7 +70,7 @@ To run this project locally, follow these steps:
         ```
     - Run the following commands to create the database tables:
         ```python
-        from app import db
+        from app import *
         db.create_all()
         ```
 7. Run the application:
