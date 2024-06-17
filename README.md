@@ -90,7 +90,7 @@ Here are some screenshots of the KetabKendra application to give you a visual ov
 
 ## Project Contributions
 
-I contributed to both frontend and backend development. On the frontend, I designed and implemented the user interface using HTML/CSS and Bootstrap, ensuring a responsive and intuitive design. For the backend, I leveraged Flask and Flask-SQLAlchemy to manage data and interactions with the SQLite database. This approach ensured seamless integration and smooth functionality across the application.
+I contributed to both frontend and backend development. On the frontend, I designed and implemented the user interface using HTML/CSS and Bootstrap, ensuring a intuitive design. For the backend, I leveraged Flask and Flask-SQLAlchemy to manage data and interactions with the SQLite database. This approach ensured seamless integration and smooth functionality across the application.
 
 ## Contributing
 
