@@ -2,12 +2,15 @@
 
 KetabKendra is a Library Management System web application project designed to efficiently manage library resources. It facilitates tasks such as adding, removing, and editing books and sections within the library. Users can easily search for books and make requests through the application's intuitive interface.
 
+**Note:** This is a project and not the end product. It serves as a demonstration of the capabilities and features of a library management system.
+
 ## Table of Contents
 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
+- [API Endpoints](#api-endpoints)
 - [Screenshots](#screenshots)
 - [Project Contributions](#project-contributions)
 - [Contributing](#contributing)
@@ -21,6 +24,7 @@ KetabKendra is a Library Management System web application project designed to e
 - **Request Management**: Facilitated users in making book requests and managed these requests efficiently.
 - **Admin and User Dashboards**: Separate dashboards for admins and users, with the first registered user being assigned admin privileges.
 - **Admin Functionality**: Admins have the ability to manage the entire library system, including adding, removing, and editing books and sections, approving or denying book requests, and managing user accounts.
+- **API Endpoints**: Exposed RESTful API endpoints for interacting with the library's resources programmatically.
 
 
 
@@ -79,6 +83,43 @@ To run this project locally, follow these steps:
 1. Open your web browser and go to `http://127.0.0.1:5000/`
 2. Register a new user. The first registered user will be assigned admin privileges.
 3. Admin users can access the admin dashboard to manage books and sections, while regular users can access the user dashboard to browse and request books.
+
+## API Endpoints
+
+KetabKendra exposes a RESTful API for interacting with the library's resources. Below are the available endpoints:
+
+### Book Endpoints
+
+- **[GET] /api/book/{book_id}**
+  - Retrieve details of a specific book by its ID.
+
+- **[PUT] /api/book/{book_id}**
+  - Update details of a specific book.
+
+- **[DELETE] /api/book/{book_id}**
+  - Delete a specific book from the database.
+
+- **[POST] /api/book**
+  - Add a new book to the database.
+
+### Section Endpoints
+
+- **[GET] /api/section/{section_id}**
+  - Retrieve details of a specific section by its ID.
+
+- **[PUT] /api/section/{section_id}**
+  - Update details of a specific section.
+
+- **[DELETE] /api/section/{section_id}**
+  - Delete a specific section from the database.
+
+- **[POST] /api/section**
+  - Add a new section to the database.
+
+### User Endpoints
+
+- **[GET] /api/user/{user_id}**
+  - Retrieve details of a specific user by their ID.
 
 ## Screenshots
 
