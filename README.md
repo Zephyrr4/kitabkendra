@@ -1,6 +1,6 @@
 # KetabKendra
 
-KetabKendra is a Library Management System web application designed to efficiently manage library resources. It facilitates tasks such as adding, removing, and editing books and sections within the library. Users can easily search for books and make requests through the application's intuitive interface.
+KetabKendra is a Library Management System web application project designed to efficiently manage library resources. It facilitates tasks such as adding, removing, and editing books and sections within the library. Users can easily search for books and make requests through the application's intuitive interface.
 
 ## Table of Contents
 
@@ -113,4 +113,4 @@ If you have any questions or suggestions, feel free to reach out.
 
 ---
 
-Thank you for using KetabKendra!
+Thank you !
