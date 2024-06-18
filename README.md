@@ -13,7 +13,6 @@ KetabKendra is a Library Management System web application project designed to e
 - [API Endpoints](#api-endpoints)
 - [Screenshots](#screenshots)
 - [Project Contributions](#project-contributions)
-- [Contributing](#contributing)
 - [Contact](#contact)
 
 ## Features
@@ -133,16 +132,6 @@ Here are some screenshots of the KetabKendra application to give you a visual ov
 
 I contributed to both frontend and backend development. On the frontend, I designed and implemented the user interface using HTML/CSS and Bootstrap, ensuring a intuitive design. For the backend, I leveraged Flask and Flask-SQLAlchemy to manage data and interactions with the SQLite database. This approach ensured seamless integration and smooth functionality across the application.
 
-## Contributing
-
-Contributions are welcome! Please follow these steps to contribute:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Commit your changes (`git commit -m 'Add new feature'`).
-5. Push to the branch (`git push origin feature-branch`).
-6. Open a Pull Request.
 
 
 ## Contact
