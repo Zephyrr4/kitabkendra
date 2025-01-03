@@ -63,15 +63,9 @@ To run this project locally, follow these steps:
     pip install -r requirements.txt
     ```
 6. Set up the database:
-    - Start the Python shell:
-        ```bash
-        python
-        ```
-    - Run the following commands to create the database tables:
-        ```python
-        from app import *
-        db.create_all()
-        ```
+   ```bash
+   python initialize_db.py
+   ```
 7. Run the application:
     ```bash
     python app.py
