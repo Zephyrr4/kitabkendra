@@ -1,6 +1,6 @@
-# KetabKendra
+# KitabKendra
 
-KetabKendra is a Library Management System web application project designed to efficiently manage library resources. It facilitates tasks such as adding, removing, and editing books and sections within the library. Users can easily search for books and make requests through the application's intuitive interface.
+KitabKendra is a Library Management System web application project designed to efficiently manage library resources. It facilitates tasks such as adding, removing, and editing books and sections within the library. Users can easily search for books and make requests through the application's intuitive interface.
 
 **Note:** This is a project and not the end product. It serves as a demonstration of the capabilities and features of a library management system.
 
@@ -39,11 +39,11 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Zephyrr4/KetabKendra.git
+    git clone https://github.com/Zephyrr4/kitabKendra.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd KetabKendra
+    cd kitabKendra
     ```
 3. Create a virtual environment:
     ```bash
@@ -85,7 +85,7 @@ To run this project locally, follow these steps:
 
 ## API Endpoints
 
-KetabKendra exposes a RESTful API for interacting with the library's resources. Below are the available endpoints:
+KitabKendra exposes a RESTful API for interacting with the library's resources. Below are the available endpoints:
 
 ### Book Endpoints
 
@@ -122,7 +122,7 @@ KetabKendra exposes a RESTful API for interacting with the library's resources. 
 
 ## Screenshots
 
-Here are some screenshots of the KetabKendra application to give you a visual overview of its interface:
+Here are some screenshots of the KitabKendra application to give you a visual overview of its interface:
 
 ![Login Screen](screenshots/Login_screen.png)
 ![User Dashboard](screenshots/User_Dashboard.png)
