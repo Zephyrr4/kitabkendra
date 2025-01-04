@@ -133,7 +133,7 @@ I contributed to both frontend and backend development. On the frontend, I desig
 If you have any questions or suggestions, feel free to reach out.
 
 - **Email**: itsmepawan.jh@gmail.com
-- **GitHub**: [Zephyrr4](https://github.com/epawan)
+- **GitHub**: [epawan](https://github.com/epawan)
 
 ---
 
